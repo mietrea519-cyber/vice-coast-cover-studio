@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Coast Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <h1><span class="vice">VICE COAST</span> <span class="studio">COVER STUDIO</span></h1>
+  <p>Your photos in, poster out — a multi-panel cover art maker that runs entirely on your machine.</p>
+</header>
+
+<main class="layout">
+  <div class="steps">
+    <section class="step" aria-labelledby="step-photos">
+      <h2 id="step-photos"><span class="num">1</span> Photos</h2>
+      <button id="pick-photos" type="button" class="big-btn">Add your photos</button>
+      <button id="sample-neon-driver" type="button" class="ghost-btn">Sample: neon driver</button>
+      <button id="sample-sunset-pier" type="button" class="ghost-btn">Sample: sunset pier</button>
+      <div id="tray" class="tray" aria-label="Your photos"></div>
+      <p class="hint">…or drag photos anywhere onto this page. Click a photo to drop it into the selected panel.</p>
+      <input id="file-picker" type="file" accept="image/*" multiple hidden>
+    </section>
+
+    <section class="step" aria-labelledby="step-frame">
+      <h2 id="step-frame"><span class="num">2</span> Frame the panel</h2>
+      <p id="panel-status" class="status-line" role="status">Panel 1 selected — drag it on the cover, scroll to zoom.</p>
+      <label class="slider-label">Zoom <span id="zoom-value">1.00×</span>
+        <input id="zoom" type="range" min="1" max="2.6" step="0.01" value="1">
+      </label>
+      <label class="slider-label">Shift across
+        <input id="shift-x" type="range" min="-0.5" max="0.5" step="0.01" value="0">
+      </label>
+      <label class="slider-label">Shift up-down
+        <input id="shift-y" type="range" min="-0.5" max="0.5" step="0.01" value="0">
+      </label>
+      <div class="row">
+        <button id="reset-framing" type="button" class="ghost-btn">Reset framing</button>
+        <button id="fill-all" type="button" class="ghost-btn">Fill every panel with this photo</button>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="step-caption">
+      <h2 id="step-caption"><span class="num">3</span> Caption</h2>
+      <label class="field-label">Title
+        <input id="title" type="text" maxlength="24" value="NEON COAST">
+      </label>
+      <label class="field-label">Tagline
+        <input id="tagline" type="text" maxlength="48" value="One city, no rules">
+      </label>
+      <p class="hint">Colour grade</p>
+      <div class="row" role="group" aria-label="Colour grade">
+        <button id="grade-neon" type="button" class="ghost-btn" aria-pressed="true"></button>
+        <button id="grade-sunset" type="button" class="ghost-btn" aria-pressed="false"></button>
+        <button id="grade-pastel" type="button" class="ghost-btn" aria-pressed="false"></button>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="step-export">
+      <h2 id="step-export"><span class="num">4</span> Export</h2>
+      <div class="sizes" role="group" aria-label="Export size">
+        <button id="size-1080x1080" type="button" class="ghost-btn" aria-pressed="false"></button>
+        <button id="size-1080x1350" type="button" class="ghost-btn" aria-pressed="false"></button>
+        <button id="size-1920x1080" type="button" class="ghost-btn" aria-pressed="true"></button>
+      </div>
+      <button id="export" type="button" class="big-btn export-btn">Export PNG</button>
+      <p id="export-status" class="hint" role="status"></p>
+    </section>
+  </div>
+
+  <section class="preview-wrap" aria-label="Cover preview">
+    <canvas id="preview" width="760" height="428" aria-label="Cover preview — click a panel to select it"></canvas>
+    <p class="hint preview-hint">Live preview — click a panel to select it, then drag and scroll to frame it.</p>
+  </section>
+</main>
+
+<div id="drop-veil" aria-hidden="true">Drop your photos to add them</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
