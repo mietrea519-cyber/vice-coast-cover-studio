@@ -1,0 +1,254 @@
+/* Vice Coast Cover Studio — the editor's look: deep plum night, neon pink
+   accents, Anton for every heading. Everything is local: the only font is
+   the Anton file shipped under app/fonts/. */
+
+@font-face {
+  font-family: "Anton";
+  src: url("./fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --night: #160a24;
+  --panel: #221233;
+  --panel-line: #3d2354;
+  --ink: #f4eefc;
+  --muted: #b9a8cc;
+  --pink: #ff2d95;
+  --teal: #2dd4bf;
+  --gold: #ffd166;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 80% -10%, #3d1150 0%, var(--night) 55%);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.masthead {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 4px;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-family: Anton, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4.4vw, 56px);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.masthead h1 .vice {
+  background: linear-gradient(90deg, var(--gold), var(--pink) 55%, #ff7ab8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.masthead h1 .studio {
+  background: linear-gradient(90deg, #eafffb, var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.masthead p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 40px;
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.steps { display: grid; gap: 18px; }
+
+.step {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 18px 20px 20px;
+}
+
+.step h2 {
+  margin: 0 0 14px;
+  font-family: Anton, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.num {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-size: 17px;
+  flex: none;
+}
+
+.hint { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+.status-line { color: var(--gold); margin: 0 0 12px; }
+
+.big-btn, .ghost-btn {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-line);
+  background: #2e1a44;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.big-btn:hover, .ghost-btn:hover { border-color: var(--pink); }
+.big-btn { background: #3a2158; font-weight: 600; }
+
+.export-btn {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.ghost-btn.picked {
+  border-color: var(--pink);
+  background: #4a2358;
+  box-shadow: 0 0 0 1px var(--pink) inset;
+}
+
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row .ghost-btn { flex: 1 1 auto; width: auto; margin-bottom: 0; }
+
+.sizes { display: grid; gap: 10px; }
+.sizes .ghost-btn { margin-bottom: 0; }
+
+.tray {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.thumb {
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border: 2px solid var(--panel-line);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2c1540;
+}
+
+.thumb:hover { border-color: var(--pink); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.slider-label, .field-label {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.slider-label span { color: var(--ink); float: right; }
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  accent-color: var(--pink);
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--panel-line);
+  background: #1a0d2b;
+  color: var(--ink);
+  font: inherit;
+}
+
+.preview-wrap { position: sticky; top: 16px; }
+
+#preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--panel-line);
+  background: var(--night);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.preview-hint { text-align: center; }
+
+#drop-veil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  background: rgba(22, 10, 36, 0.88);
+  color: #fff;
+  font-family: Anton, "Arial Narrow", sans-serif;
+  font-size: 34px;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  pointer-events: none;
+}
+
+body.dropping #drop-veil { display: grid; }
+
+/* A ?shot=cover scene: the cover alone, edge to edge, no editor chrome. */
+body.shot-cover { background: #0d0518; }
+body.shot-cover .masthead,
+body.shot-cover .steps,
+body.shot-cover .preview-hint,
+body.shot-cover #drop-veil { display: none; }
+body.shot-cover .layout { display: block; max-width: none; margin: 0; padding: 0; }
+body.shot-cover .preview-wrap { position: static; }
+body.shot-cover #preview {
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  border-radius: 0;
+  object-fit: fill;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .preview-wrap { position: static; order: -1; }
+}
