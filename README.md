@@ -1,8 +1,8 @@
 # Vice Coast Cover Studio
 
-[![Built with make.fun](https://img.shields.io/badge/built%20with-make.fun-ff4d8d)](https://make.fun)
-[![Bounty: GTA 6 Cover Art](https://img.shields.io/badge/bounty-gta6--cover--art--01-7c3aed)](https://make.fun/bounty/gta6-cover-art-01)
-[![Entry: Vice Coast Cover Studio](https://img.shields.io/badge/entry-vice--coast--cover--studio-2dd4bf)](https://make.fun/bounty/gta6-cover-art-01)
+[![make.fun · gta6-cover-art-01](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/mietrea519-cyber/vice-coast-cover-studio/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/mietrea519-cyber/vice-coast-cover-studio/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 
 An entry for the [GTA 6 Cover Art bounty](https://make.fun/bounty/gta6-cover-art-01) on make.fun.
 
